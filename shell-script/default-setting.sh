@@ -39,5 +39,25 @@ Istio2()
     echo "Updated namespace check"
     kubectl get ns 
     kubectl get pod -n istio-system 
+    # https://github.com/GoogleCloudPlatform/microservices-demo/blob/master/release/kubernetes-manifests.yaml
+    echo "Demo MSA : kubernetes-manifest "
+    cd /home/ec2-user/environment/istio-install
+    wget https://raw.githubusercontent.com/GoogleCloudPlatform/microservices-demo/master/release/kubernetes-manifests.yaml
+    #kubectl apply -f kubernetes-manifests.yaml
+    kubectl get ns default --show-labels
+    # label none check
+    kubectl label namespace default istio-injection=enabled
+    sleep 5s
+    kubectl apply -f kubernetes-manifests.yaml
+    sleep 3m
+    cd /home/ec2-user/environment/istio-install/istio-1.11.2
+    kubectl apply -f samples/addons/
+    sleem 10s
+    echo "Check namespace istio-system Pods"
+    kubectl get pods -n istio-system
+    echo "Check namespace istio-system Services"
+    kubectl get svc -n istio-system
+    kubectl port-forward svc/kiali -n istio-system 8080:20001
 }
+
 Istio;
