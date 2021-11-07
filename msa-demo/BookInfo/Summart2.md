@@ -71,3 +71,8 @@ fortio pod에 접속하여 httpbin 으로 요청보내면, 정상 200 응답 코
 서킷브레이커가 작동될 때 Kiali 화면
 ```
 ![image](https://user-images.githubusercontent.com/50174803/140650877-051e97eb-baca-42fa-b1d9-7a4d528024f4.png)
+
+## addon Install 
+![image](https://user-images.githubusercontent.com/50174803/140651135-5858fd4f-bdff-42da-ba1e-a208d9992674.png)
+
+![image](https://user-images.githubusercontent.com/50174803/140651574-74f65017-a204-4901-a21a-346aa64b7aba.png)
