@@ -1,0 +1,1 @@
+# Istio Example BooInfo Summary
